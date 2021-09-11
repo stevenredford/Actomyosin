@@ -1,0 +1,43 @@
+&Initializers
+
+	&Initializer MakeRandomActinFilaments
+
+		&TargetMode		NUMBER
+		&TargetNumber	100
+		&avgActinLength 	1000
+		&stdDevActinLength 	200
+		&useUniformInitialLengthDistribution	true
+		&Static	false
+		&Pinned				false
+	
+	&endInitializer
+
+&endInitializers
+
+&Parameters
+	&Remote				false
+	&KT					4.13				// Temperature
+	&ActinDynamicsMode		FullDynamics			// StaticFilaments or RecycleFilaments or FullDynamics
+	&nMyosinHeads			8 							// number of heads on each side of minifilament
+	&totalLinkerPool 			10000						// total number of crosslinkers in cytoplasmic pool
+	&actinConc 				1						// total concentration of actin subunit pool
+	&targetActinDensity		0.01						// target actin subunit density when initializing to target density
+	&barbedendkon			8
+	&barbedendkoff			0
+	&pointedendkon			0
+	&pointedendkoff			0
+	&filamentNucleationProb		7						// probability of nucleating a new filament
+	&filamentSeveringProb		0.0000						// probability (per unit length of filament) of severing
+	&filamentCappingProb		0.00						// probability (per barbed end) of capping
+	&xlRecruitmentProb  		0.000001
+	&xlBindingProb  			1.5
+	&xlReleaseProb  			1.0
+	&remoteReportStep 		1.0							// how often (sec) to write data during remote sims
+	&timeStep				0.001						// simulation timestep
+	&infoWriteStep 			1.0							// How often to write info during sims.
+&endParameters
+			
+		
+		
+		
+		

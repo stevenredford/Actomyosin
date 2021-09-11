@@ -1,0 +1,123 @@
+
+&Iterator	TransectIterator
+
+&Evaluator	SpringForceEvaluator
+	&Name	SpringForces
+	&StopTime 	10
+	&Interval	0.01
+	&AutoPass	true
+&endEvaluator
+
+&Evaluator	MinifilamentVelocityEvaluator
+	&Name	MinifilamentVelocity
+	&StopTime 	10
+	&Interval	0.01
+	&AutoPass	true
+&endEvaluator
+
+&Evaluator	MyoSpringLengthEvaluator
+	&Name	AllMyoSpringLengths
+	&StopTime 	10
+	&Interval	0.001
+	&AutoPass	true
+&endEvaluator
+
+&Evaluator	MyoSpringLengthSumEvaluator
+	&Name	SumMyoLengthsBoundToEachActin
+	&StopTime 	10
+	&Interval	0.01
+	&AutoPass	true
+&endEvaluator
+
+&Evaluator	ActinFilamentPositionEvaluator
+	&Name	ActinPositions
+	&StopTime 	10
+	&Interval	0.01
+	&AutoPass	true
+&endEvaluator
+
+&Evaluator	ActinMyosinBindingEvaluator
+	&Name	ActinMyosinBinding
+	&StopTime 	10
+	&Interval	0.01
+	&NumStartTimeIntervals	5
+	&AutoPass	true
+&endEvaluator
+
+	&Parameter
+		&Name			numInitialActins
+		&LowerBound			1
+		&UpperBound			40
+		&SampleMode		Linear
+	&endParameter
+	&NumSamples		5
+
+&endIterator
+
+&Initializers
+
+	&Initializer MakeSingleActinBundle
+		&Filament
+			&InitXPosition	0
+			&Length			1999.0
+			&bunchWidth		0
+			&Crosslinkers	false
+			&PlusEndAttachment	ElasticAttachment
+				&springConstant			0.01
+			&endAttachment
+			&MinusEndAttachment	ElasticAttachment
+				&springConstant			0.01
+			&endAttachment
+		&endFilament
+	&endInitializer
+	
+
+	&Initializer MakeSpecifiedMinifilaments
+	
+		&MiniFilament
+			&InitXPosition	0
+			&InitYPosition 	0
+			&Orientation	0
+		&endMiniFilament
+		
+	
+	&endInitializer
+	
+	
+	
+&endInitializers
+
+&Parameters
+	&Remote					false
+	&filamentsBuckle		false
+	&brownianOn				false
+	&xDimension				4000
+	&yDimension				4000
+	&ActinDynamicsMode	StaticFilaments  				// StaticFilaments or RecycleFilaments or FullDynamics
+	&resistiveLoad 			0							// constant force on each actin filament towards plus-end
+	&nMyosinHeads			10							// number of heads on each side of minifilament
+	&atpOnMyoRate			20000						// Dominant rates from Howard Table 14.2
+	&myoUniformReleaseProb	2000						//
+	&myoOffFilATP_ADPPiRate	200 						// prob will release actin if ATP state
+	&myoUniformBindingProb	1000						// prob will bind if collision is close enough
+	&myoOnFilADPPi_ADPRate	10000						//
+	&myoOnFilADP_NoneRate	100						//
+	&totalLinkerPool 		0							// total number of crosslinkers in cytoplasmic pool
+	&xlReleaseProb			0
+	&xlRestLength			0
+	&monomerConc 			1							// total concentration of actin subunit pool
+	&paintStep				0.01
+	&totaltime				40
+	&myoSpacing				10
+	&myoOffset				3
+	&frameInterval			1.0
+	&timeStep				0.00005						// simulation timestep
+	&writeMovieFrames		true
+&endParameters
+			
+		
+		
+		
+		
+		
+		

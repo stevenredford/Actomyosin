@@ -1,0 +1,103 @@
+
+&Iterator	TransectIterator
+
+
+&Evaluator	MyoForceEvaluator
+	&Name	MyoForces
+	&StopTime 	5
+	&StartAverageTime	1
+	&Interval	0.00001
+	&MotionMode	Glide
+	&sampleAverageInterval	0.1
+	&AutoPass	true
+&endEvaluator
+
+&Evaluator	MyoDissEvaluator
+	&Name	MyoDiss
+	&StopTime 	5
+	&StartEvalTime	1
+	&Interval	0.00001
+	&AutoPass	true
+&endEvaluator
+
+&NumSamples	15
+		
+&CompositeParameter
+	&name		nBoundHeads
+	&LowerBound		1
+	&UpperBound		100
+	&SampleMode		Linear
+	&Rule	AverageNBoundRule
+	&endRule
+&endParameter
+
+&ParametersToVary
+		&adpReleaseRateMult			0.01	1		Logarithmic
+		&myoUniformBindingProb		0.5	50         Logarithmic
+&endParametersToVary
+
+
+&endIterator
+
+&Initializers
+
+		&Initializer MakeSpecifiedActinFilaments
+		&Filament
+				&InitXPosition		0
+				&InitYPosition		0
+				&Length				100000.0
+				&Orientation		0
+				&PlusEndAttachment		ElasticAttachment
+					&SpringConstant		0.5
+				&endAttachment
+				&MinusEndAttachment		ElasticAttachment
+					&SpringConstant		0.5
+				&endAttachment
+		&endFilament
+		
+	&endInitializer
+	
+	
+
+	&Initializer MakeSpecifiedMinifilaments
+		
+		&MiniFilament
+			&InitXPosition	0
+			&InitYPosition 	0
+			&Orientation	0
+		&endMiniFilament
+		
+		
+	&endInitializer
+	
+&endInitializers
+
+&Parameters
+	&Remote					false
+	&frameInterval			1
+	&brownianOn				false
+	&xDimension				120000
+	&yDimension				2000
+	&ActinDynamicsMode	StaticFilaments  				// StaticFilaments or RecycleFilaments or FullDynamics
+	&atpOnMyoRate			20000						// Dominant rates from Howard Table 14.2
+	&myoUniformBindingProb	10						// prob will bind if collision is close enough
+	&myoUniformReleaseProb	2000					//
+	&myoOffFilATP_ADPPiRate	100 						// prob will release actin if ATP state
+	&myoOnFilADPPi_ADPRate	10000						//
+	&myoOnFilADP_NoneRate	191
+	&adpReleaseMode		Dissociate_ADP_Catch_Slip
+	&ViscosityMultiplier	100
+	&paintStep				0.0001
+	&timeStep				0.000005				// simulation timestep
+	&totaltime				5
+	&myoOffset				3
+	&writeMovieFrames		false
+
+&endParameters
+			
+		
+		
+		
+		
+		
+		

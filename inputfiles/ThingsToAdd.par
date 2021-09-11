@@ -1,0 +1,37 @@
+&Iterator       Iterator
+
+	&Evaluator	YourEvaluator
+		&Name	yourName
+		&StopTime 	5.0
+		&Interval	0.02
+		&AutoPass	true
+	&endEvaluator
+	
+
+	&ParametersToVary
+			&totalLinkerPool        	0	4000    Linear
+			&numInitialMinifilaments 	0	200    Linear
+	&endParametersToVary
+
+		
+
+&endIterator
+
+
+
+&Initializers
+
+ndInitializers
+
+
+&Parameters
+	&Remote	true
+	&writeMovieFrames		true
+	&frameInterval			0.01
+&endParameters
+		
+		
+		
+		
+		
+		

@@ -1,0 +1,120 @@
+//&Iterator	SystematicIterator
+
+
+&Evaluator      MyoForceManyActinsEvaluator
+        &Name   MyoForceManyActins
+        &StopTime       100
+        &StartAverageTime       10
+        &Interval       0.00001
+        &sampleAverageInterval    0.1
+        &AutoPass       true
+&endEvaluator
+
+&Evaluator      SpringForceEvaluator
+        &Name   SpringForces
+        &StopTime       100
+        &Interval       0.01
+        &preEquilibrate false
+        &equilibrationTime      10
+        &AutoPass       true
+        &startAveragingForces   0
+&endEvaluator
+
+
+&Evaluator	MyoDissOpposedActinsEvaluator
+	&Name	MyoDissOpposedActins
+	&StopTime 	100
+	&Interval	0.00001
+	&AutoPass	true
+&endEvaluator
+
+//&NumSamplesPerPar       25
+
+//&ParametersToVary
+//		&nMyosinHeads				1	50		Linear
+//&endParametersToVary
+
+
+//&endIterator
+
+&Initializers
+
+		&Initializer MakeSpecifiedActinFilaments
+		&Filament
+		   &InitXPosition          5000
+			&InitYPosition          0
+			&Length                 10000.0
+			&viscosityTweak			0.142
+			&Orientation            0
+			&PlusEndAttachment      ElasticAttachment
+				&SpringConstant     0.01
+			&endAttachment
+			&MinusEndAttachment     ElasticAttachment
+				&SpringConstant     0.01
+			&endAttachment
+		&endFilament
+		
+		&Filament
+		   &InitXPosition          -5000
+			&InitYPosition          0
+			&Length                 10000.0
+			&viscosityTweak			0.142
+			&Orientation            180
+			&PlusEndAttachment      ElasticAttachment
+				&SpringConstant     0.01
+			&endAttachment
+			&MinusEndAttachment     ElasticAttachment
+				&SpringConstant     0.01
+			&endAttachment
+		&endFilament
+
+
+
+	&endInitializer
+	
+	
+
+	&Initializer MakeSpecifiedMinifilaments
+		
+		&MiniFilament
+			&InitXPosition	0
+			&InitYPosition 	0
+			&Orientation	0
+			&Pinned		false
+			&viscosityTweak			10.0
+		&endMiniFilament
+		
+		
+	&endInitializer
+	
+&endInitializers
+
+&Parameters
+	&Remote					false
+	&frameInterval			0.01
+	&brownianOn				false
+	&xDimension				22000
+	&yDimension				200
+	&ActinDynamicsMode		StaticFilaments  		// StaticFilaments or RecycleFilaments or FullDynamics
+	&atpOnMyoRate			20000					// Dominant rates from Howard Table 14.2
+	&myoUniformReleaseProb	2000
+	&myoOffFilATP_ADPPiRate	200 					// prob will release actin if ATP state
+	&myoOnFilADPPi_ADPRate	10000
+	&myoOnFilADP_NoneRate	191
+	&myoUniformBindingProb	10						// prob will bind if collision is close enough
+	&adpReleaseRateMult		0.47
+    &adpReleaseMode         Dissociate_ADP_Catch_Slip
+	&paintStep				0.001
+	&timeStep				0.00001					// simulation timestep
+	&totaltime				100
+	&nMyosinHeads			25
+	&ViscosityMultiplier	100
+	&myoOffset				3
+&endParameters
+			
+		
+		
+		
+		
+		
+		

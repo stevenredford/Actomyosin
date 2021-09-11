@@ -1,0 +1,47 @@
+&xDim			6000.0		// microns
+&yDim			6000.0		// microns
+&zDim			1000.0		// microns
+&nMyosinHeads	16 // number of heads on each side of minifilament
+&nMiniFilaments	1000 // initial number of minifilaments
+&myoSpringConstant		0.1	// spring constant for linkage of myosin head to filament; determines average force
+&myoRadius				10	// radius of myosin head in nanometers
+&myoStalkLength 		30.0 // length of the stalk that connects myosin heads to minifilament
+&myoReleaseProb 	20.0  // probability that myosin head will release
+&myoUseForceBasedRelease 	false  // whether to use force-based release
+&myoForceBasedReleaseBase 	1 	// P = myoForceBasedReleaseBase*exp(myoForceBasedReleaseExp)
+&myoForceBasedReleaseExp  	3	// P = myoForceBasedReleaseBase*exp(myoForceBasedReleaseExp)
+&myoAngleBias 				0.7	// at what angle to actin filament long axis myosin head can bind.
+&xlRestLength 				20  // rest length of crosslink
+&xlMaxStretch 				30	// max length crosslink can stretch to before it breaks
+&xlMaxBindingDistance 		25	// max distance at which a crosslink can bind
+&xlSpringConstant 			0.05	// pN/nm
+&xlReleaseProb 				1.0
+&xlBindingProb 				0.01
+&totalLinkerPool 			2400
+&xlMinBindingAngle 			0
+&useFixedNumberOfActins 		false
+&useUniformInitialLengthDistribution 	false
+&numActins 					2000
+&actinConc 					1
+&targetActinDensity		0.01
+&stdDevActinLength		1200
+&actinJumpProb			10.0
+&filamentNucleationProb	0.00001
+&filamentSeveringProb	0.00003
+&filamentCappingProb	0.00001
+&barbedEndKon 				100.0
+&barbedEndKoff 				0
+&pointedEndKon 				0
+&pointedEndKoff 			50
+&remoteReportStep 		100
+&timeStep				0.001
+&outputDirectory	output
+&stateDirectory		states
+&infoWriteStep 			100
+		
+		
+		
+		
+		
+		
+		

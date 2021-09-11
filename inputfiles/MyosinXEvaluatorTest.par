@@ -1,0 +1,64 @@
+
+&Evaluator	MyosinXEvaluator
+	&StopTime 	0.1
+	&Interval	0.1
+	&AutoPass	true
+&endEvaluator
+
+&Initializers
+
+	&Initializer MakeSpecifiedActinBundles
+		&Bundle
+			&InitXPosition	0
+			&InitYPosition	500
+			&Length	7500
+			&Orientation	0
+			&Pinned		true
+		&endBundle
+		&Bundle
+			&InitXPosition	0
+			&InitYPosition	-500
+			&Length	7500
+			&Orientation	180
+			&Pinned		true
+		&endBundle
+	&endInitializer
+	
+	&Initializer MakeRandomMyosinVTails
+		&NumMyosinVTails	2000
+	&endInitializer
+	
+&endInitializers
+
+&Parameters
+	&Remote	false
+	&XDim								8500
+	&YDim								2000
+
+	&myoVRadius							8
+	&myoVStalkLength					13
+	&myosinVTailLength					21
+	&myosinVTailWidth					3
+	&myoVSpringConstant					1
+	
+	&myoVStepSize						36
+
+	&myoVInitBindingProb				1
+	&myoVSecondHeadBindingProb			200
+
+	&myoVLeadPowerStrokeProb			800
+	&myoVTrailPowerStrokeProb			0
+	&myoVSingleReleaseProb				55
+	&myoVLeadReleaseProb				0
+	&myoVTrailReleaseProb				10
+	&myoVIntersectReleaseProb			50
+	&myoVBundleLeadReleaseProb			0
+	&myoVBundleIntersectReleaseProb		500
+
+
+	&ActinDynamicsMode	StaticFilaments  				// StaticFilaments or RecycleFilaments or FullDynamics
+	&timeStep				0.001						// simulation timestep
+	&WriteMovieFrames		true
+	&frameinterval			10.0
+
+&endParameters

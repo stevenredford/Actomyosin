@@ -1,0 +1,56 @@
+&Initializers
+
+	&Initializer MakeDiscOfActinFilaments
+		&TargetMode			DENSITY
+		&Static				true
+		&TargetDensity		0.00005
+		&discRadius			1000
+		&outward			false
+		&inward 			false
+		&avgActinLength		800
+		&stdDevActinLength	300
+	&endInitializer
+	
+	&Initializer MakeDiscOfMinifilaments
+	
+		&NumFilaments		100
+		&MyoRateMult		0.0
+		&MyoFracRateMult	0.0
+		&discRadius			1000
+	
+	&endInitializer
+
+
+	
+&endInitializers
+
+&Parameters
+	&Remote	false
+	&brownianOn				false
+	&xDimension				4000
+	&yDimension				4000
+	&ActinDynamicsMode	StaticFilaments  				// StaticFilaments or RecycleFilaments or FullDynamics
+	&resistiveLoad 			0							// constant force on each actin filament towards plus-end
+	&nMyosinHeads			8 							// number of heads on each side of minifilament
+	&atpOnMyoRate			20000						// Dominant rates from Howard Table 14.2
+	&myoUniformReleaseProb	2000						//
+	&myoOffFilATP_ADPPiRate	200 						// prob will release actin if ATP state
+	&myoUniformBindingProb	1000						// prob will bind if collision is close enough
+	&myoOnFilADPPi_ADPRate	10000						//
+	&myoOnFilADP_NoneRate	1000						//
+	&totalLinkerPool 		0							// total number of crosslinkers in cytoplasmic pool
+	&monomerConc 			1							// total concentration of actin subunit pool
+	&filamentNucleationProb	0.00001						// probability of nucleating a new filament
+	&filamentSeveringProb	0.0003						// probability (per unit length of filament) of severing
+	&filamentCappingProb	0.01						// probability (per barbed end) of capping
+	&paintStep				0.001
+	&frameInterval			0.001
+	&timeStep				0.00001						// simulation timestep
+&endParameters
+			
+		
+		
+		
+		
+		
+		

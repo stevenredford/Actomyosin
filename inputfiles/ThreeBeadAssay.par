@@ -1,0 +1,82 @@
+&Evaluator	DutyRatioEvaluator
+			&StopTime 	50.0
+			&Interval 	0.1
+			&Threshold	1
+			&AutoPass	true
+&endEvaluator
+
+&Initializers
+
+	&Initializer MakeSpecifiedActinFilaments
+	
+		&Filament
+			&InitXPosition	0
+			&InitYPosition  -10
+			&Length	2000.0
+			&Orientation	0
+			&MinusEndAttachment	ElasticAttachment
+			&SpringConstant 0
+			&endAttachment
+			&PlusEndAttachment	ElasticAttachment
+			&SpringConstant 0
+			&endAttachment
+		&endFilament
+	
+	&endInitializer
+	
+	&Initializer MakeMyosinSurface
+		&CenterXPosition	500
+		&CenterYPosition	2000
+		&XDimension		0.001
+		&YDimension		0.001
+		&MyosinDensity		0.002
+	&endInitializer
+	
+	&Initializer MakeMyosinSurface
+		&CenterXPosition	2000
+		&CenterYPosition	2000
+		&XDimension		0.001
+		&YDimension		0.001
+		&MyosinDensity		0.002
+	&endInitializer
+	
+	&Initializer MakeMyosinSurface
+		&CenterXPosition	3500
+		&CenterYPosition	2000
+		&XDimension		0.001
+		&YDimension		0.001
+		&MyosinDensity		0.002
+	&endInitializer
+
+	
+&endInitializers
+
+&Parameters
+	&Remote	false
+	&brownianOn		false
+	&xDimension		4001
+	&yDimension		4001
+	&ActinDynamicsMode	StaticFilaments  				// StaticFilaments or RecycleFilaments or FullDynamics
+	&nMyosinHeads		8 						// number of heads on each side of minifilament
+	&actinBSiteInterval 	1
+	&atpOnMyoRate		20000						// Dominant rates from Howard Table 14.2
+	&myoUniformReleaseProb	2000						// prob will release actin if on filament in ATP state
+	&myoOffFilATP_ADPPiRate	100 						// prob of recovery stroke off filament
+	&myoUniformBindingProb	10						// prob will bind if collision is close enough
+	&myoOnFilADPPi_ADPRate	10000						// prob of power stroke
+	&adpReleaseRateMult	0.02						// adjusts the force-based catch-slip ADP release, and thus the duty-ratio
+	&totalLinkerPool 	0						// total number of crosslinkers in cytoplasmic pool
+	&monomerConc 		1						// total concentration of actin subunit pool
+	&targetActinDensity	0.01						// target actin subunit density when initializing to target density
+	&filamentNucleationProb	0.00001						// probability of nucleating a new filament
+	&filamentSeveringProb	0.0003						// probability (per unit length of filament) of severing
+	&filamentCappingProb	0.01						// probability (per barbed end) of capping
+	&paintStep				0.01
+	&frameInterval				0.01
+	&timeStep				0.00001				// simulation timestep
+&endParameters
+		
+		
+		
+		
+		

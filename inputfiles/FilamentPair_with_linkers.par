@@ -1,0 +1,47 @@
+&Initializers
+
+	&Initializer MakeSpecifiedActinFilaments
+	
+		&Filament
+			&InitXPosition	0
+			&InitYPosition 10
+			&Length	1000.0
+			&Orientation	0
+			&Pinned		true
+		&endFilament
+		&Filament
+			&InitXPosition	0
+			&InitYPosition -10
+			&Length	1000.0
+			&Orientation	180
+			&Pinned		true
+		&endFilament
+	
+	&endInitializer
+	
+&endInitializers
+
+&Parameters
+	&Remote	false
+	&ActinDynamicsMode		StaticFilaments		// no nucleation, +/- end dynamics, or severing
+	&totalLinkerPool 		4			// total number of crosslinkers in cytoplasmic pool
+	&xlMaxBindingDistance	30  		// How far a xlinker bound to one filament can reach out to bind a second filament.
+	&xlRestLength			20			// Rest length for force calculations.
+	&xlSpringConstant		0.1;		// Stiffness of a crosslinker.
+	&xlReleaseProb			10			// Probabality that a bound linker will release a bond.
+	&xlRecruitmentProb		0.01		// Probability a soluble crosslinker will bind a filament from bulk solution.
+	&xlBindingProb			50.0		// Probability a singly-bound linker will bind a second filament if it is within reach.
+	&xlMaxStretch			30			// Maximum stretch before a linker releases.
+	&xlMinBindingAngle		0.0			// linkers only bind filament if contact angle exceeds this angle.
+	&xlForceBasedReleaseFac	0.0			// multiplier for force-based crosslinker release.
+	&remoteReportStep		1.0			// how often (sec) to write data during remote sims
+	&timeStep				0.001		// simulation timestep
+	&infoWriteStep 			1.0			// How often to write info during sims.
+&endParameters
+			
+		
+		
+		
+		
+		
+		

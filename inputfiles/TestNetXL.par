@@ -1,0 +1,123 @@
+&Iterator       Iterator
+
+	&Evaluator	RadialStressEvaluator
+		&Name	RadialStress
+		&StopTime 	5.0
+		&Interval	0.02
+		&AutoPass	true
+	&endEvaluator
+	
+	&Evaluator	GlobalStressEvaluator
+		&Name	GlobalStresses
+		&StopTime 	5.0
+		&Interval	0.02
+		&AutoPass	true
+	&endEvaluator
+	
+	&Evaluator	RadialDisplacementEvaluator
+		&Name	radialDisplacements
+		&StopTime 	5.0
+		&Interval	0.02
+		&AutoPass	true
+	&endEvaluator
+	
+	&Evaluator	RadialPolarityEvaluator
+		&Name	filamentPolarities
+		&StopTime 	5.0
+		&Interval	0.02
+		&AutoPass	true
+	&endEvaluator
+
+	&Evaluator      FocusEvaluator
+		&Name   MyosinBlobs
+		&StopTime       5.0
+		&Interval       0.1
+		&AutoPass       true
+		&FocusSizeThreshold     300
+	&endEvaluator
+	
+	&Evaluator	ConnectivityEvaluator
+		&Name	Connectivity
+		&StopTime 	5.0
+		&Interval	0.01
+		&AutoPass	true
+	&endEvaluator
+
+	&ParametersToVary
+			&totalLinkerPool        	0	4000    Linear
+			&numInitialMinifilaments 	0	200    Linear
+	&endParametersToVary
+
+	&NumIteratesToMake		3
+		
+
+&endIterator
+
+
+
+&Initializers
+
+	&Initializer MakeDiscOfActinFilaments
+		&TargetMode			DENSITY
+		&Static				true
+		&TargetDensity		0.00007
+		&discRadius			1000
+		&outward			false
+		&inward 			false
+		&avgActinLength		600
+		&stdDevActinLength	0.3
+	&endInitializer
+	
+	&Initializer MakeDiscOfMinifilaments
+		&MyoRateMult		0.0
+		&MyoFracRateMult	0.0
+		&discRadius			1000
+	&endInitializer
+&endInitializers
+
+
+&Parameters
+
+	&brownianOn				true
+
+	&xDimension				4000
+	&yDimension				4000
+
+	&resistiveLoad 			0					// constant force on each actin filament towards plus-end
+
+	&nMyosinHeads			8 					// number of heads on each side of minifilament
+	&atpOnMyoRate			20000					// Dominant rates from Howard Table 14.2
+	&myoUniformReleaseProb	2000						//
+	&myoOffFilATP_ADPPiRate	200 						// prob will release actin if ATP state
+	&myoUniformBindingProb	1000						// prob will bind if collision is close enough
+	&myoOnFilADPPi_ADPRate	10000						//
+	&myoOnFilADP_NoneRate	1000						//
+	&numInitialMinifilaments	200
+
+	&filamentsBuckle		false
+	&ActinDynamicsMode		StaticFilaments  			// StaticFilaments or RecycleFilaments or FullDynamics
+	&monomerConc 			1					// total concentration of actin subunit pool
+	&filamentNucleationProb	0.00001						// probability of nucleating a new filament
+	&filamentSeveringProb	0.0003						// probability (per unit length of filament) of severing
+	&filamentCappingProb	0.01						// probability (per barbed end) of capping
+
+	&totalLinkerPool 		2000					// total number of crosslinkers in cytoplasmic pool
+	&xlRecruitmentProb  	0.0001
+	&xlMaxBindingDistance	30
+	&xlSpringConstant		0.5
+	&xlRestLength			20
+	&xlBindingProb  		0.3
+	&xlReleaseProb			5.0
+
+	&Remote					false
+	&paintStep				0.01
+	&frameInterval			0.01
+	&timeStep				0.00001						// simulation timestep
+	&writeMovieFrames		true
+&endParameters
+		
+		
+		
+		
+		
+		

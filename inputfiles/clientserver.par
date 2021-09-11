@@ -1,0 +1,66 @@
+
+	&Iterator	SystematicIterator
+	
+		&Evaluator	NetworkMorphologyEvaluator
+			&StopTime 	2
+			&Interval 	1
+			&Threshold	1
+			&BundleInterval 5.0
+			&AutoPass	true
+		&endEvaluator
+		
+		&NumSamplesPerPar	2
+		.
+		&ParametersToVary
+			
+			&NumInitialActins	500	1000	Linear
+			&totalLinkerPool	1000	2000	Linear
+			&avgActinLength	1000	2000	Linear
+			
+		&endParametersToVary
+
+		
+		&WriteFinalFrames	true
+	
+	&endIterator
+
+
+	&SimulationInstanceName	outputtest
+
+	&Initializers
+
+	&Initializer MakeRandomActinFilaments
+		
+		&TargetMode		NUMBER
+		&stdDevActinLength 	0
+		&useUniformInitialLengthDistribution	true
+		&Static		true
+		&Pinned		false
+	
+	&endInitializer
+
+	
+	&endInitializers
+
+
+	&Parameters
+		&totaltime	2
+		&Remote true
+		&WriteMovieFrames	true
+		&ActinDynamicsMode	StaticFilaments 				// StaticFilaments or RecycleFilaments or FullDynamics
+		&xlRecruitmentProb  		0.00001
+		&xlBindingProb  			1.5
+		&xlReleaseProb  			1.0
+		&frameinterval			0.2
+		&timeStep				0.001						// simulation timestep
+	&endParameters
+	
+	
+
+
+
+		
+		
+		
+		
+		

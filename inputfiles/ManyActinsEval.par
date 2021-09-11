@@ -1,0 +1,28 @@
+	&Evaluator	SpringForceManyActinsEvaluator
+		&Name	SpringForceManyActins
+		&Interval	0.01
+		&StartAverageTime	20
+		&StopTime 	30.0
+		&AutoPass	true
+	&endEvaluator
+	
+	
+	&Evaluator	MyoForceManyActinsEvaluator
+		&Name	MyoForceManyActins
+		&Interval	0.01
+		&StartAverageTime	20
+		&StopTime 	30
+		&AutoPass	true
+	&endEvaluator
+	
+	&Evaluator	MyoDissManyActinsEvaluator
+		&Name	MyoDissManyActins
+		&StopTime 	30
+		&AutoPass	true
+	&endEvaluator
+	
+		
+		
+		
+		
+		

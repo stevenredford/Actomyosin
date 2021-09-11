@@ -1,0 +1,110 @@
+		
+	&Evaluator	MyoForceManyActinsEvaluator
+		&Name	MyoForceManyActins
+		&Interval	0.00001				// Sample every timestep
+		&sampleAverageInterval	0.01	// This is how often to record a value averaged over the last sampleAverageInterval
+		&StartAverageTime	2			//
+		&StopTime 	30
+		&AutoPass	true
+	&endEvaluator
+	
+	&Evaluator	MyoDissManyActinsEvaluator
+		&Name	MyoDissManyActins
+		&Interval	0.00001				// Sample every timestep
+		&StopTime 	30
+		&AutoPass	true
+	&endEvaluator
+	
+
+&Initializers
+
+	&Initializer MakeSpecifiedActinFilaments
+	
+		&Filament
+			&InitXPosition	-200
+			&InitYPosition  0
+			&Length	699
+			&Orientation	190
+			&PlusEndAttachment		ElasticAttachment
+				&SpringConstant		1
+			&endAttachment
+			&MinusEndAttachment		ElasticAttachment
+				&SpringConstant		0.0
+			&endAttachment
+		&endFilament
+
+		&Filament
+			&InitXPosition	-200
+			&InitYPosition  -0
+			&Length	699
+			&Orientation	170
+			&PlusEndAttachment		ElasticAttachment
+				&SpringConstant		1
+			&endAttachment
+			&MinusEndAttachment		ElasticAttachment
+				&SpringConstant		0.0
+			&endAttachment
+			&TextAbove
+		&endFilament
+	
+		&Filament
+			&InitXPosition	300
+			&InitYPosition  -0
+			&Length	699
+			&Orientation	0
+			&PlusEndAttachment		ElasticAttachment
+				&SpringConstant		1
+			&endAttachment
+			&MinusEndAttachment		ElasticAttachment
+				&SpringConstant		0.0
+			&endAttachment
+			&TextAbove
+		&endFilament
+	
+	&endInitializer
+
+	&Initializer MakeSpecifiedMinifilaments
+	
+		&MiniFilament
+			&InitXPosition	-100
+			&InitYPosition 	0
+			&Orientation	0
+			&Pinned		false
+		&endMiniFilament
+		
+	
+	&endInitializer
+	
+	
+	
+&endInitializers
+
+&Parameters
+	&Remote	false
+	&brownianOn		false
+	&xDimension		1500
+	&yDimension		1500
+	&ActinDynamicsMode	StaticFilaments  				// StaticFilaments or RecycleFilaments or FullDynamics
+	&atpOnMyoRate		20000						// Dominant rates from Howard Table 14.2
+	&myoUniformReleaseProb	2000						// prob will release actin if on filament in ATP state
+	&myoOffFilATP_ADPPiRate	100 						// prob of recovery stroke off filament
+	&myoUniformBindingProb	10						// prob will bind if collision is close enough
+	&myoOnFilADPPi_ADPRate	10000						// prob of power stroke
+	&myoOnFilADP_NoneRate	191
+	&adpReleaseMode		Dissociate_ADP
+	&adpReleaseRateMult			0.3
+	&ViscosityMultiplier		1000
+	&nMyosinHeads				30
+	&paintStep		0.001
+	&frameInterval		0.001
+	&timeStep		0.000003						// simulation timestep
+	&totaltime		30
+
+&endParameters
+			
+		
+		
+		
+		
+		
+		

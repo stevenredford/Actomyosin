@@ -1,0 +1,119 @@
+
+//&Iterator	SystematicIterator
+
+&Evaluator	ABMyoForceEvaluator
+	&Name	ABMyoForces
+	&StopTime 	10
+	&Interval	0.001
+	&AutoPass	true
+&endEvaluator
+
+&Evaluator	MinifilamentPositionEvaluator
+	&Name	MinifilamentPosition
+	&StopTime 	10
+	&Interval	0.001
+	&AutoPass	true
+&endEvaluator
+
+&Evaluator	ActinMyosinBindingPolarEvaluator
+	&Name	PolarActinMyosinBinding
+	&StopTime 	10
+	&Interval	0.1
+	&AutoPass	true
+&endEvaluator
+
+&Evaluator	ActinFilamentPositionEvaluator
+	&Name	ActinFilamentPosition
+	&StopTime 	10
+	&Interval	0.001
+	&AutoPass	true
+&endEvaluator
+
+/*&NumSamplesPerPar	5
+
+&ParametersToVary
+		&nBarbedEndsLeft	1	5	Linear
+		&actinBSiteInterval	1	10	Linear	10
+		
+	
+
+&endParametersToVary
+
+
+&endIterator*/
+
+&Initializers
+
+	&Initializer AlignedPolarOrMixedBundleSetNFilsEachSide
+		&Filament
+			&InitXPosition	0
+			&InitYPosition	0
+			&crosslinkDensity	0
+
+	
+		&endFilament
+
+
+	&endInitializer
+	
+
+	&Initializer MakeSpecifiedMinifilaments
+		
+		&MiniFilament
+			&InitXPosition	0
+			&InitYPosition 	0
+			&Orientation	0
+			&Pinned			false
+		&endMiniFilament
+	&endInitializer
+		
+
+	
+	
+	
+&endInitializers
+
+&Parameters
+	&Remote				true
+	&frameInterval			0.1
+	&brownianOn			true
+	&xDimension			200000
+	&yDimension			100
+	&ActinDynamicsMode	StaticFilaments  	// StaticFilaments or RecycleFilaments or FullDynamics
+	&myoUniformBindingProb	10
+	&atpOnMyoRate			20000		// Dominant rates from Howard Table 14.2
+	&myoUniformReleaseProb	2000			//
+	&myoOffFilATP_ADPPiRate	100 			// prob will release actin if ATP state
+	&myoOnFilADPPi_ADPRate	10000		//
+	&myoOnFilADP_NoneRate	191
+	&adpReleaseMode			Dissociate_ADP_Catch_Slip
+	&ViscosityMultiplier	100
+	&paintStep				0.0001
+	&timeStep				0.00001		// simulation timestep
+	&totaltime				10
+	&myoOffset				3
+	&writeMovieFrames		true
+	&xlReleaseProb			0
+	&xlRestLength			0	
+	&xlRecruitmentProb		0.5
+	&xlBindingProb			1000
+	&xlMaxBindingDistance	100
+	&bundleLength			40000
+	&bundleWidth			0
+	&avgFilsXsection		6	
+	&actinLength			40000
+	&adpReleaseRateMult    	2.63
+	&totalLinkerPool	100
+	&nMyosinHeads		250						
+	&nBarbedEndsRight	5
+	&xlSpringConstant		4	
+	&nBarbedEndsLeft		1
+	&actinBSiteInterval		1
+&endParameters
+			
+		
+		
+		
+		
+		
+		

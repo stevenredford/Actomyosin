@@ -1,0 +1,43 @@
+
+&Iterator	Iterator
+
+	&Evaluator	FilamentConvergence
+		&StopTime 	1000
+		&SteadyStateThreshold	0.1
+		&ConvergenceCheckInterval	1
+	&endEvaluator
+	
+	&ParametersToVary
+		&barbedEndKon	5	50 Linear
+		&filamentNucleationProb	10 1000	Logarithmic
+		&filamentSeveringProb	0.0000001	0.00001	Logarithmic
+		&filamentCappingProb	0.01	1	Logarithmic
+	&endParametersToVary
+
+&endIterator
+
+&Intitializers
+
+	&Initializer MakeRandomActins
+	
+	
+	&endInitializer
+	
+	&Initializer MakePermaLinkers
+	
+	
+	&endInitializer
+
+
+&endInitializers
+
+&Parameters
+		&Remote	true
+&endParameters
+
+
+		
+		
+		
+		
+		

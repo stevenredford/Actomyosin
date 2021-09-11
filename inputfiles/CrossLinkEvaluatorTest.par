@@ -1,0 +1,39 @@
+
+&Evaluator	CrossLinkEvaluator
+	&StopTime 	10.5
+	&Interval	0.1
+	&AutoPass	true
+&endEvaluator
+	
+
+&Initializers
+
+	&Initializer MakeRandomActinFilaments
+		&TargetMode		NUMBER
+		&TargetNumber	700
+		&avgActinLength 	5000
+		&stdDevActinLength 	200
+		&useUniformInitialLengthDistribution	true
+		&Static	true
+		&Pinned				false
+	&endInitializer
+	
+&endInitializers
+
+&Parameters
+	&Remote	false
+	&ActinDynamicsMode		StaticFilaments  			// StaticFilaments or RecycleFilaments or FullDynamics
+	&nMyosinHeads			8 							// number of heads on each side of minifilament
+	&totalLinkerPool 		5000						// total number of crosslinkers in cytoplasmic pool
+	&xlRecruitmentProb  	0.0001
+	&xlBindingProb  		1.5
+	&xlReleaseProb			1.0
+	&remoteReportStep 		1.0							// how often (sec) to write data during remote sims
+	&timeStep				0.001						// simulation timestep
+	&infoWriteStep 			1.0							// How often to write info during sims.
+&endParameters
+			
+		
+		
+		
+		

@@ -1,0 +1,26 @@
+
+
+&Initializers
+
+//	&Initializer MakeRandomActinFilaments
+	
+//	&endInitializer
+	
+
+
+&endInitializers
+
+&Parameters
+		&Remote	false
+		&barbedEndKon	50
+		&filamentNucleationProb	10
+		&filamentSeveringProb	0.00001
+		&filamentCappingProb	0.5
+&endParameters
+
+
+		
+		
+		
+		
+		

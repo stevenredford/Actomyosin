@@ -1,0 +1,197 @@
+
+&Initializers
+
+	&Initializer MakeSpecifiedBarrierElements
+		&BarrierVector
+			&InitXPosition	500
+			&InitYPosition	-1274
+			&Length			449
+			&Orientation	90
+			&Pinned		true
+		&endBarrierVector
+		&BarrierVector
+			&InitXPosition	500
+			&InitYPosition	-500
+			&Length			900
+			&Orientation	90
+			&Pinned		true
+		&endBarrierVector
+		&BarrierVector
+			&InitXPosition	500
+			&InitYPosition	1274
+			&Length			449
+			&Orientation	90
+			&Pinned		true
+		&endBarrierVector
+		&BarrierVector
+			&InitXPosition	500
+			&InitYPosition	500
+			&Length			900
+			&Orientation	90
+			&Pinned		true
+		&endBarrierVector
+		&BarrierVector
+			&InitXPosition	975
+			&InitYPosition	-1050
+			&Length			950
+			&Orientation	0
+			&Pinned		true
+		&endBarrierVector
+		&BarrierVector
+			&InitXPosition	975
+			&InitYPosition	-950
+			&Length			950
+			&Orientation	0
+			&Pinned		true
+		&endBarrierVector
+		&BarrierVector
+			&InitXPosition	975
+			&InitYPosition	-50
+			&Length			950
+			&Orientation	0
+			&Pinned		true
+		&endBarrierVector
+		&BarrierVector
+			&InitXPosition	975
+			&InitYPosition	50
+			&Length			950
+			&Orientation	0
+			&Pinned		true
+		&endBarrierVector
+		&BarrierVector
+			&InitXPosition	975
+			&InitYPosition	1050
+			&Length			950
+			&Orientation	0
+			&Pinned		true
+		&endBarrierVector
+		&BarrierVector
+			&InitXPosition	975
+			&InitYPosition	950
+			&Length			950
+			&Orientation	0
+			&Pinned		true
+		&endBarrierVector
+		&BarrierVector
+			&InitXPosition	1450
+			&InitYPosition	-1000
+			&Length			100
+			&Orientation	90
+			&Pinned		true
+		&endBarrierVector
+		&BarrierVector
+			&InitXPosition	1450
+			&InitYPosition	0
+			&Length			100
+			&Orientation	90
+			&Pinned		true
+		&endBarrierVector
+		&BarrierVector
+			&InitXPosition	1450
+			&InitYPosition	1000
+			&Length			100
+			&Orientation	90
+			&Pinned		true
+		&endBarrierVector
+		&BarrierVector
+			&InitXPosition	-1400
+			&InitYPosition	0
+			&Length			2998
+			&Orientation	90
+			&Pinned		true
+		&endBarrierVector
+		&BarrierVector
+			&InitXPosition	-499
+			&InitYPosition	-1400
+			&Length			1998
+			&Orientation	0
+			&Pinned		true
+		&endBarrierVector
+		&BarrierVector
+			&InitXPosition	-499
+			&InitYPosition	1400
+			&Length			1998
+			&Orientation	0
+			&Pinned		true
+		&endBarrierVector
+	&endInitializer
+
+	&Initializer MakeSpecifiedActinBundles
+		&Bundle
+			&InitXPosition	650
+			&InitYPosition	-1000
+			&Length			1500
+			&Orientation	0
+			&Pinned		true
+		&endBundle
+		&Bundle
+			&InitXPosition	650
+			&InitYPosition	0
+			&Length			1500
+			&Orientation	0
+			&Pinned		true
+		&endBundle
+		&Bundle
+			&InitXPosition	650
+			&InitYPosition	1000
+			&Length			1500
+			&Orientation	0
+			&Pinned		true
+		&endBundle
+	&endInitializer
+
+	&Initializer MakeRandomMyosinVTails
+		&NumMyosinVTails	200
+		&UseBoundaries		true
+		&XLowerBound		-1350
+		&XUpperBound		450
+		&YLowerBound		-1350
+		&YUpperBound		1350
+	&endInitializer
+
+	
+&endInitializers
+
+&Parameters
+
+	&Remote	false
+	&XDim								3000
+	&YDim								3000
+	
+	&myoVRadius							8
+	&myoVStalkLength					13
+	&myosinVTailLength					21
+	&myosinVTailWidth					3
+	&myoVSpringConstant					1
+	
+	&myoVStepSize						36
+
+	&myoVInitBindingProb				1
+	&myoVInitBundleBindingProb			800
+	&myoVSecondHeadBindingProb			200
+	&myoVBundleSecondHeadBindingProb	200
+
+	&myoVLeadPowerStrokeProb			800
+	&myoVTrailPowerStrokeProb			0
+
+	&myoVSingleReleaseProb				55
+	&myoVLeadReleaseProb				0
+	&myoVTrailReleaseProb				10
+	&myoVIntersectReleaseProb			50
+	
+	&myoVBundleSingleReleaseProb		12
+	&myoVBundleLeadReleaseProb			0
+	&myoVBundleTrailReleaseProb			10
+	&myoVBundleIntersectReleaseProb		50
+	
+	&ActinDynamicsMode	StaticFilaments  				// StaticFilaments or RecycleFilaments or FullDynamics
+	&monomerConc 			1							// total concentration of actin subunit pool
+	&numInitialActins		1
+	&targetActinDensity		0.01						// target actin subunit density when initializing to target density
+	&filamentNucleationProb	0.00001						// probability of nucleating a new filament
+	&filamentSeveringProb	0.0003						// probability (per unit length of filament) of severing
+	&filamentCappingProb	0.01						// probability (per barbed end) of capping
+	&remoteReportStep 		1.0							// how often (sec) to write data during remote sims
+	&timeStep				0.001						// simulation timestep
+	&infoWriteStep 			1.0							// How often to write info during sims.
+&endParameters

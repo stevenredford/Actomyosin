@@ -1,0 +1,96 @@
+
+&Evaluator	MyoForceManyActinsEvaluator
+	&Name	MyoForces
+	&StopTime 	150
+	&StartAverageTime	0.5
+	&Interval	0.00001
+	&sampleAverageInterval	0.1
+	&AutoPass	true
+&endEvaluator
+
+&Evaluator	MyoDissParallelActinsEvaluator
+	&Name	MyoDiss
+	&StopTime 	150
+	&StartEvalTime	0.5
+	&Interval	0.00001
+	&AutoPass	true
+&endEvaluator
+
+&Initializers
+
+	&Initializer MakeSpecifiedActinFilaments
+	
+		&Filament
+			&InitXPosition	-500
+			&InitYPosition  0
+			&Length	1000.0
+			&Orientation	180
+			&MinusEndAttachment	ElasticAttachment
+			&SpringConstant 0.1			// pn/nm
+			&endAttachment
+			&PlusEndAttachment	ElasticAttachment
+			&SpringConstant 0.1			// pn/nm
+			&endAttachment
+		&endFilament
+	
+		&Filament
+			&InitXPosition	500
+			&InitYPosition  0
+			&Length	1000.0
+			&Orientation	0
+			&MinusEndAttachment	ElasticAttachment
+			&SpringConstant 0.1			// pn/nm
+			&endAttachment
+			&PlusEndAttachment	ElasticAttachment
+			&SpringConstant 0.1			// pn/nm
+			&endAttachment
+		&endFilament
+	
+	&endInitializer
+
+	&Initializer MakeSpecifiedMinifilaments
+	
+		&MiniFilament
+			&InitXPosition	0
+			&InitYPosition 	0
+			&Orientation	0
+			&Pinned			false
+		&endMiniFilament
+		
+	
+	&endInitializer
+	
+	
+	
+&endInitializers
+
+&Parameters
+	&brownianOn		false					//	Turn Brownian force on and off.
+	&ViscosityMultiplier	1000			`// Sets the vsicosity of the medium as a multiple of vicosity of water
+	&timeStep		0.00001					// 	simulation timestep
+
+	&xDimension		4000					// 	X dimension of arena in nanometers
+	&yDimension		200						// 	Y dimension of arena in nanometers
+	&totaltime		20						//	Duration of simulation
+
+	&paintStep		0.0001					// How often to update on-screen graphics
+	&writeMovieFrames		true			// If true, write movie frames to disk
+	&Remote					false			// If false show on-screen graphics
+	&frameInterval	0.1					// How often to write a movie frame to disk
+	
+	&ActinDynamicsMode	StaticFilaments  		// StaticFilaments or RecycleFilaments or FullDynamics
+	
+	&adpReleaseMode		Dissociate_ADP_Catch_Slip	// Force dependence of ADP release
+	&nMyosinHeads		20							// number of heads on each side of minifilament
+	&adpReleaseRateMult			0.2					// Multiplies the unloaded (zero-force) ADP release rate
+	&myoUniformBindingProb		10					// rate at which Myosin_ADP_Pi binds actin filaments
+
+
+&endParameters
+			
+		
+		
+		
+		
+		
+		

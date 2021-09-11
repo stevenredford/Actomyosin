@@ -1,0 +1,77 @@
+&Iterator 	TransectIterator
+
+&Evaluator      GlidingAssayEvaluator
+        &Name   Glide
+        &StopTime       1.5
+        &StartAverageTime       0.5
+        &Interval       0.000005
+        &sampleAverageInterval    0.1
+        &AutoPass       true
+&endEvaluator
+
+&Evaluator      ActinDissEvaluator
+        &Name   ActinDiss
+        &StopTime       1.5
+        &Interval       0.000005
+        &AutoPass       true
+&endEvaluator
+
+&NumSamples	20
+		
+&Parameter
+	&Name			myoSurfaceDensity
+	&LowerBound		0.001
+	&UpperBound		0.01
+	&SampleMode		Linear
+&endParameter
+
+&endIterator
+
+&Initializers
+                        
+	&Initializer MakeSpecifiedActinFilaments
+		&Filament
+			&InitXPosition	-2000
+			&InitYPosition  0
+			&Length		2000.0
+			&Orientation	180
+		&endFilament
+	&endInitializer
+	
+	&Initializer MakeMyosinSurface
+		&CenterXPosition	0
+		&CenterYPosition	0
+		&XDimension		10000
+		&YDimension		80
+		&myoDensityMode		SurfaceDensity
+
+	&endInitializer
+
+&endInitializers
+
+&Parameters
+	&Remote                         false
+	&frameInterval                  0.1
+	&brownianOn                             false
+	&xDimension                             10000
+	&yDimension                             2000
+	&ActinDynamicsMode      StaticFilaments                // StaticFilaments or RecycleFilaments or FullDynamics
+	&atpOnMyoRate           20000                  // Dominant rates from Howard Table 14.2
+	&myoUniformBindingProb  10                            // prob will bind if collision is close enough
+	&myoUniformReleaseProb  2000                                    //
+	&myoOffFilATP_ADPPiRate 100                                             // prob will release actin if ATP state
+	&myoOnFilADPPi_ADPRate  10000                                           //
+	&myoOnFilADP_NoneRate   191
+	&adpReleaseMode         Dissociate_ADP_Catch_Slip
+	&adpReleaseRateMult		1
+	&paintStep                       0.001
+	&timeStep                        0.000005                                         // simulation timestep
+	&totaltime                       1.5
+	&myoOffset                       3
+	&writeMovieFrames          		true
+	&ViscosityMultiplier            100
+&endParameters
+		
+		
+		
+		

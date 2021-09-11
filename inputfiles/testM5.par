@@ -1,0 +1,77 @@
+&Initializers
+
+	&Initializer MakeSpecifiedActinFilaments
+	
+		&Filament
+			&InitXPosition	0
+			&InitYPosition	750
+//			&InitYPosition	1250
+//			&Length	13000.0
+			&Length	1000.0
+			&Orientation	0
+			&Pinned		true
+		&endFilament
+		&Filament
+			&InitXPosition	0
+			&InitYPosition	-750
+//			&Length	13000.0
+			&Length	1000.0
+			&Orientation	180
+			&Pinned		true
+		&endFilament
+		
+	&endInitializer
+	
+	&Initializer MakeRandomMyosinVTails
+//		&NumMyosinVTails	5000
+		&NumMyosinVTails	500
+	&endInitializer
+	
+&endInitializers
+
+&Parameters
+	&Remote	false
+//	&XDim								15000
+//	&YDim								7500
+	&XDim								3000
+	&YDim								3000
+
+	&myoVRadius							8
+	&myoVStalkLength					24
+	&myoVTailLength						80
+	&myoVTailWidth						3
+	&myoVSpringConstant					1
+	
+	&myoVStepSize						72
+
+	&myoVUniformBindingProb				200
+	&myoVBundleUniformBindingProb		200
+	&myoVInitBindingProb				200
+	&myoVInitBundleBindingProb			200
+
+	&myoVLeadPowerStrokeProb			800
+	&myoVTrailPowerStrokeProb			0
+
+	&myoVSingleUniformReleaseProb			18
+	&myoVLeadUniformReleaseProb				0
+	&myoVTrailUniformReleaseProb			15
+	&myoVIntersectUniformReleaseProb		50
+	
+	&myoVBundleSingleUniformReleaseProb		18
+	&myoVBundleLeadUniformReleaseProb		0
+	&myoVBundleTrailUniformReleaseProb		15
+	&myoVBundleIntersectUniformReleaseProb	50
+
+
+	&ActinDynamicsMode	StaticFilaments  				// StaticFilaments or RecycleFilaments or FullDynamics
+	&monomerConc 			1							// total concentration of actin subunit pool
+	&numInitialActins		1
+	&targetActinDensity		0.01						// target actin subunit density when initializing to target density
+	&filamentNucleationProb	0.00001						// probability of nucleating a new filament
+	&filamentSeveringProb	0.0003						// probability (per unit length of filament) of severing
+	&filamentCappingProb	0.01						// probability (per barbed end) of capping
+	&remoteReportStep 		1.0							// how often (sec) to write data during remote sims
+	&timeStep				0.001						// simulation timestep
+	&infoWriteStep 			1.0							// How often to write info during sims.
+&endParameters
+

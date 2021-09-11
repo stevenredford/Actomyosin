@@ -1,0 +1,42 @@
+
+	&Iterator	Iterator
+	
+		&Evaluator	Evaluator
+			&StopTime 	10
+			&Interval 	1
+			&Threshold	1
+			&AutoPass	true
+		&endEvaluator
+		
+		&ParametersToVary
+			&monomerConc	0.1	5	Linear
+			&FilamentCappingProb	0.001	0.1	Logarithmic
+		&endParametersToVary
+		
+		&WriteFinalFrames	true
+		
+		&SimulationInstanceName	frogmorton
+	
+	&endIterator
+
+
+&Parameters
+	&Remote true
+	&WriteMovieFrames	true
+	&ActinDynamicsMode	FullDynamics 				// StaticFilaments or RecycleFilaments or FullDynamics
+	&nMyosinHeads			8 							// number of heads on each side of minifilament
+	&totalLinkerPool 		0							// total number of crosslinkers in cytoplasmic pool
+	&monomerConc 			1							// total concentration of actin subunit pool
+	&targetActinDensity		0.01						// target actin subunit density when initializing to target density
+	&filamentNucleationProb	100							// probability of nucleating a new filament
+	&filamentSeveringProb	0.0003						// probability (per unit length of filament) of severing
+	&filamentCappingProb	0.01						// probability (per barbed end) of capping
+	&timeStep				0.001						// simulation timestep
+&endParameters
+
+
+		
+		
+		
+		
+		

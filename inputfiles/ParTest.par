@@ -1,0 +1,49 @@
+&Parameters
+	&Remote	true
+	&ActinDynamicsMode	StaticFilaments  				// StaticFilaments or RecycleFilaments or FullDynamics
+	&useUniformInitialLengthDistribution 	false   	// true or false
+	&xDim			6000.0								// microns
+	&yDim			6000.0								// microns
+	&zDim			1000.0								// microns
+	&nMyosinHeads			8 							// number of heads on each side of minifilament
+	&nMiniFilaments			600 						// initial number of minifilaments
+	&myoSpringConstant		0.1							// spring constant for linkage of myosin head to filament; determines average force
+	&myoRadius				10							// radius of myosin head (nm)
+	&myoStalkLength 		30.0 						// length of stalk that connects myosin heads to minifilament (nm)
+	&myoReleaseProb 	10.0  							// probability that myosin head will release
+	&myoUseForceBasedRelease 	false  					// whether to use force-based release
+	&myoForceBasedReleaseBase 	1 						// P = myoForceBasedReleaseBase*exp(myoForceBasedReleaseExp)
+	&myoForceBasedReleaseExp  	3						// P = myoForceBasedReleaseBase*exp(myoForceBasedReleaseExp)
+	&myoAngleBias 				0.3						// The Cos(angle between actin filament and minifilament axis) must be greater for head to bind
+	&xlRestLength 				20  					// rest length of crosslink
+	&xlMaxStretch 				30						// max length crosslink can stretch to before it breaks
+	&xlMaxBindingDistance 		25						// max distance at which a crosslink can bind
+	&xlSpringConstant 			0.05					// pN/nm
+	&xlReleaseProb 				1.0						// probability a crosslinker/F-actin bond will release
+	&xlBindingProb 				0.01					// length-independent probability that a singly bound crosslinker will bind second filament.
+	&xlRecruitmentProb 			0.01					// probability of crosslinker recruitment per unit length of filament
+	&totalLinkerPool 			2400					// total number of crosslinkers in cytoplasmic pool
+	&xlMinBindingAngle 			0						// The Cos(angle between actin filament and XL) must be greater for XL to bind
+	&numInitialActins 			1000					// Number of actin filaments to create at beginning of simulation
+	&monomerConc 				1						// total concentration of actin subunit pool
+	&targetActinDensity		0.01						// target actin subunit density when initializing to target density
+	&avgActinLength			1200						// Average filament length to use when initializing variable size filaments
+	&stdDevActinLength		1200						// stdev of filament length to use when initializing variable size filaments
+	&filamentNucleationProb	0.00001						// probability of nucleating a new filament
+	&filamentSeveringProb	0.00003						// probability (per unit length of filament) of severing
+	&filamentCappingProb	0.01						// probability (per barbed end) of capping
+	&barbedEndKon 				100.0					// barbed end addition rate
+	&barbedEndKoff 				0						// barbed end loss rate
+	&pointedEndKon 				0						// pointed end addition rate
+	&pointedEndKoff 			50						// pointed end loss rate
+	&remoteReportStep 		1.0							// how often (sec) to write data during remote sims
+	&timeStep				0.001						// simulation timestep
+	&infoWriteStep 			1.0							// How often to write info during sims.
+&endParameters
+			
+		
+		
+		
+		
+		
+		
